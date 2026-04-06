@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Read(//c/Users/prady/Desktop/New folder \\(2\\)/**)",
+      "Bash(npx create-next-app@latest temp-next --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(cp -r \"c:/Users/prady/Desktop/New folder \\(2\\)/temp-next/\"* \"c:/Users/prady/Desktop/New folder \\(2\\)/3d-website/\")",
+      "Bash(cp \"c:/Users/prady/Desktop/New folder \\(2\\)/temp-next/.gitignore\" \"c:/Users/prady/Desktop/New folder \\(2\\)/3d-website/\")",
+      "Bash(cp -r \"c:/Users/prady/Desktop/New folder \\(2\\)/temp-next/node_modules\" \"c:/Users/prady/Desktop/New folder \\(2\\)/3d-website/\")",
+      "Bash(npm install:*)"
+    ]
+  }
+}

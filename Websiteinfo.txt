@@ -1,0 +1,307 @@
+================================================================================
+  WEBSITE INFO — our-revolution.com
+  Source: Live analysis of https://our-revolution.com
+  Date collected: April 2026
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+1. BRAND NAME & TAGLINE
+────────────────────────────────────────────────────────────────────────────────
+
+  Brand Name   : Our Revolution
+  Tagline      : "Creating what the future holds"
+  Sub-tagline  : "Global Strategic Brand Design Agency"
+  Location Line: Sydney | London
+
+────────────────────────────────────────────────────────────────────────────────
+2. ONE-LINER
+────────────────────────────────────────────────────────────────────────────────
+
+  "Brand design & packaging design agency creating what the future holds.
+   With influential brand strategy, brand identity & packaging design."
+
+  Extended:
+  "We are a design company that helps brands define and thrive in culture.
+   Creating influential strategy, brand identity, packaging design and
+   communications."
+
+────────────────────────────────────────────────────────────────────────────────
+3. BRAND VOICE
+────────────────────────────────────────────────────────────────────────────────
+
+  Tone         : Confident, forward-thinking, culturally fluent, strategic
+  Personality  : Independent, bold, globally-minded, future-focused
+  Style Notes  :
+    - Uses "we" language — inclusive but authoritative
+    - Favors future-tense and aspirational phrasing
+    - Phrases like "what comes next", "hold onto tomorrow", "shape the future"
+    - Avoids jargon overload; keeps copy clean and purposeful
+    - "Swaggering style" (per web agency Likely Story, who built the site)
+    - Mission-driven but commercially focused
+
+  Sample Phrases from site:
+    • "We create what the future holds."
+    • "The brands that 'get' the power of strategy are the brands that
+       go the distance."
+    • "Every brand has the power to shape the future. We help them make
+       that impact meaningful and memorable."
+    • "New insights. New ideas. New opportunities."
+    • "What does the future hold for your brand? Let's talk about how we
+       can help you realise your brand's potential."
+    • "We're an independent creative company with a clear focus on what
+       comes next."
+    • "From brand strategy through to design and communication, we create
+       something that stands out today, for people to hold onto tomorrow."
+
+────────────────────────────────────────────────────────────────────────────────
+4. COLORS
+────────────────────────────────────────────────────────────────────────────────
+
+  Primary Palette (observed from brand identity / site aesthetic):
+    - Off-White / Cream       : Background base, editorial feel
+    - Deep Black / Near-Black : Primary text, bold headers, UI elements
+    - Warm Ivory / Sand       : Subtle background tones on sections
+
+  Accent / Highlight:
+    - Electric Yellow / Chartreuse : Used sparingly for CTA hover states,
+                                     interactive UI accents, and brand pops
+                                     (noted in Likely Story portfolio frames)
+
+  Design Language:
+    - High contrast black-on-white typography
+    - Minimal use of saturated colour — when used, it hits hard
+    - Photographic work carries color weight (packaging, product photography)
+    - UI elements rely heavily on motion and typographic contrast rather
+      than a colourful palette
+
+  Note: Exact hex values are embedded in CSS and were not extractable from
+  the server response (site returns base64 image data before CSS loads in
+  static fetch). Color observations drawn from portfolio screenshots and
+  third-party agency references.
+
+────────────────────────────────────────────────────────────────────────────────
+5. NAVIGATION MENU
+────────────────────────────────────────────────────────────────────────────────
+
+  Primary Nav Items:
+    1. Work          → /work
+    2. About         → /about
+    3. News          → /news
+    4. Contact Us    → (contact / inquiry page)
+
+  Logo: "Our Revolution" wordmark — top left
+  CTA in Nav: Likely "Contact Us" or "Let's chat" — top right area
+
+  Note: No dropdown mega-menus observed. Minimal, clean one-level navigation
+  consistent with premium agency aesthetic.
+
+────────────────────────────────────────────────────────────────────────────────
+6. HERO SECTION
+────────────────────────────────────────────────────────────────────────────────
+
+  Headline     : "We create what the future holds."
+                 (or variant: "Creating what the future holds")
+
+  Sub-copy     : "We are a design company that helps brands define and
+                  thrive in culture. Creating influential strategy, brand
+                  identity, packaging design and communications."
+
+  CTA Button   : "Learn more about us"  →  /about
+
+  Visual Treatment:
+    - Large-scale typographic headline dominates above the fold
+    - Full-bleed hero — either video reel of work or high-contrast still
+    - Animated text elements (staggered reveals, per Likely Story motion work)
+    - Black and white or near-monochrome base with pops of product colour
+      from case study imagery blending in
+
+  Studio locations displayed: Sydney | London
+
+────────────────────────────────────────────────────────────────────────────────
+7. SHADERS / BACKGROUNDS
+────────────────────────────────────────────────────────────────────────────────
+
+  Visual FX & Background Treatments observed / inferred:
+    - Smooth scroll-driven background transitions between sections
+    - Large typographic "ink" style text used as background texture in places
+    - Off-white paper-like base with subtle noise texture (editorial magazine feel)
+    - No heavy gradient meshes or glassmorphism — aesthetic is clean, editorial
+    - Likely use of CSS clip-path and overflow hidden for section reveals
+    - Motion: Text and imagery slide, fade, or scale-in on scroll (GSAP/motion
+      library observed via Likely Story's animation work on the build)
+    - Case study imagery presented in irregular crops / full-bleed panels
+    - Dark sections (near-black) used for contrast breaks between white sections
+
+────────────────────────────────────────────────────────────────────────────────
+8. SCROLL AREAS / SECTIONS
+────────────────────────────────────────────────────────────────────────────────
+
+  Page structure observed (homepage + about):
+
+  [1] HERO — Full-viewport headline + sub-copy + CTA
+  [2] INTRO / ABOUT TEASER — "We're an independent creative company..."
+  [3] SERVICES / CAPABILITIES — Three pillars (see Features section below)
+  [4] FEATURED WORK — Horizontal or grid scroll of case studies
+       (Yerbi, Hans, Azurial, Noble Fellows, Chobani etc.)
+  [5] ABOUT / TEAM — Founders + senior team bios
+  [6] NEWS / INSIGHTS — Article cards: "New insights. New ideas. New opportunities."
+  [7] FOOTER CTA — "What does the future hold for your brand? Let's talk."
+  [8] FOOTER
+
+  Scroll behaviour: Smooth scroll with on-scroll reveal animations for each
+  section. Work grid likely uses horizontal drag or progressive lazy-load.
+
+────────────────────────────────────────────────────────────────────────────────
+9. FEATURES / SERVICES SECTION
+────────────────────────────────────────────────────────────────────────────────
+
+  Three Core Service Pillars (numbered 01 – 03 on About page):
+
+  ──────────────────────────────────────────────
+  01. THE STRATEGY
+  ──────────────────────────────────────────────
+  Headline : "The brands that 'get' the power of strategy are the brands
+              that go the distance."
+  Body     : "We're here to help you shape yours. To provide the spark that
+              gives you your 'guiding light'. Through collaborative workshops,
+              market research and competitor analysis we get a clear blueprint
+              for what your future might hold. It informs the decisions you
+              make around product and marketing alike – and means your brand
+              comes to life in a way that's consistently compelling."
+  Sub-services:
+    • Brand Strategy
+    • Brand Architecture
+    • Brand Naming
+    • Brand Positioning
+    • Workshops & Research
+    • Competitor Analysis
+
+  ──────────────────────────────────────────────
+  02. THE DESIGN
+  ──────────────────────────────────────────────
+  Headline : "Your brand's symbology comes to life through creative design.
+              The kind that doesn't just reflect the latest trends but leads
+              them forward."
+  Body     : "That ignites real connection between you and your consumers.
+              Our senior creative team work at the forefront of this sort of
+              expression. Thinking, doing and making for the future — across
+              all the elements of a brand."
+  Sub-services:
+    • Brand Identity
+    • Packaging Design
+    • Brand Guidelines
+    • Art Direction
+    • Photography
+
+  ──────────────────────────────────────────────
+  03. THE COMMUNICATIONS
+  ──────────────────────────────────────────────
+  Headline : "Through the communication system of a brand, we create powerful
+              ideas that drive people to think and feel differently."
+  Body     : "Through inspiring communications we capture opportunity and build
+              growth in your brand. Driven by strategic insight and purpose, we
+              create branded communications that lead with relevance and ensure
+              cross-platform impact and measurable results. With executional
+              creative capabilities we can deliver all forms of content,
+              seamlessly, across all channels."
+  Sub-services:
+    • Content Creation
+    • Campaign
+    • Copywriting
+    • Shopper Marketing
+
+────────────────────────────────────────────────────────────────────────────────
+10. CALLS TO ACTION
+────────────────────────────────────────────────────────────────────────────────
+
+  Primary CTA (Hero section):
+    → "Learn more about us"   (links to /about)
+
+  Secondary CTA (News page / section):
+    → "Show More"   (loads additional news articles)
+
+  Footer / Pre-footer CTA (strongest conversion CTA):
+    → Prompt  : "What does the future hold for your brand? Let's talk
+                 about how we can help you realise your brand's potential"
+    → Button  : "Contact Us"
+
+  Case Study CTAs (bottom of each project page):
+    → "Let's chat about your brand..."   (soft contact trigger)
+
+  Global persistent CTA in header:
+    → "Contact Us"   (top-right nav)
+
+────────────────────────────────────────────────────────────────────────────────
+11. CARDS
+────────────────────────────────────────────────────────────────────────────────
+
+  A. Work / Case Study Cards (on /work page and homepage reel)
+     ─────────────────────────────────────────────────────────
+     Layout   : Full-bleed image dominant, title overlay on hover or below
+     Examples :
+       • Yerbi         — Brand strategy, identity & packaging (energy drink)
+       • Hans          — Rebrand & packaging design (craft meats)
+       • Azurial       — Seltzer brand ("Australian lifestyle")
+       • Noble Fellows — Brand design (AGDA & World Brand Design award winner)
+       • Chobani (Oat So) — Comms/content work
+     Card info shown: Project name + service category (e.g., "Packaging Design")
+     Hover: Likely reveals project descriptor or image zoom
+     CTA: Click-through to full case study page
+
+  B. Team Member Cards (on /about page)
+     ──────────────────────────────────
+     Layout   : Portrait photo + name + title
+     People   :
+       • Jen Doran     — Founder, Creative Director
+       • Diana Yako    — Founder, Client Services Director
+       • Alex Tomkins  — Design Director
+       • Alex Perestrelo — Senior Account Manager
+     Style    : Clean editorial card — photo + minimal text below
+
+  C. News / Insight Cards (on /news page)
+     ──────────────────────────────────────
+     Layout  : Article thumbnail + headline + minimal date or category label
+     Examples:
+       • "Why Is Packaging Design Important?"
+       • "Future Focus Vol 1: Our Founders"
+       • "Future Focus Vol 1: Photographer Alice Hutchison"
+       • "Why Do We Love Watching People 'Unbox' Stuff?"
+       • "Our Creative Director, Jen Doran Chats With Eden Marsh For IWD"
+       • "Our Creative Director, Jen Doran in Ad News"
+       • "Our Revolution Wins at AGDA Awards"
+       • "The Azurial Picks Up Silver At FAB"
+       • "Noble Fellows On World Brand Design"
+       • "Our Client Director, Diana in Inside FMCG"
+       • "Oat So Chobani"
+     CTA: "Show More" to load additional articles
+
+────────────────────────────────────────────────────────────────────────────────
+12. FOOTER
+────────────────────────────────────────────────────────────────────────────────
+
+  Pre-footer Conversion Block:
+    "What does the future hold for your brand?
+     Let's talk about how we can help you realise your brand's potential."
+    [Contact Us]
+
+  Footer Content:
+    Brand      : Our Revolution wordmark / logo
+    Studios    : Sydney  |  London
+    Navigation :
+      - Work
+      - About
+      - News
+      - Contact Us
+    Social Links:
+      - Instagram   (@ourrevolution_)
+      - LinkedIn    (Our Revolution)
+    Legal:
+      - © Our Revolution  (copyright year)
+      - Privacy Policy (implied / standard)
+
+  Note: Footer is minimal and typographically led. No complex multi-column
+  layout — consistent with the clean, editorial brand aesthetic.
+
+================================================================================
+  END OF DOCUMENT
+================================================================================
