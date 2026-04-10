@@ -47,15 +47,15 @@ const menuItemVariants = {
   }),
 };
 
-export default function Navbar() {
+export default function Navbar({ hidden = false }: { hidden?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        animate={hidden ? { opacity: 0, y: -20, pointerEvents: "none" as const } : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-6 mix-blend-difference"
       >
         <button
@@ -121,10 +121,22 @@ export default function Navbar() {
                   animate="visible"
                   exit="exit"
                   onClick={() => setMenuOpen(false)}
-                  className="menu-link relative text-[clamp(3rem,10vw,8rem)] leading-[0.95] font-normal text-foreground transition-colors duration-300 hover:text-white"
-                  style={{ fontFamily: "var(--font-serif)" }}
+                  className="menu-link group text-[clamp(3rem,10vw,8rem)] leading-[0.95] font-normal text-foreground block overflow-hidden"
                 >
-                  {item.label}
+                  {/* Default: PP Migra (serif) — slides up on hover */}
+                  <span
+                    className="block transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:-translate-y-full"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    {item.label}
+                  </span>
+                  {/* Hover: Sharp Grotesk — slides in from below */}
+                  <span
+                    className="absolute left-0 right-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:translate-y-0 font-black tracking-[-0.03em] uppercase text-white"
+                    style={{ fontFamily: "var(--font-grotesk)" }}
+                  >
+                    {item.label}
+                  </span>
                 </motion.a>
               ))}
             </nav>

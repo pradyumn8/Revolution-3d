@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const sitemapLinks = [
   { label: "Home", href: "/" },
@@ -24,17 +24,16 @@ const socialLinks = [
 // Animated footer text: even letters (0,2,4...) slide from top, odd letters (1,3,5...) slide from bottom
 function AnimatedFooterText() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
   const text = "OurRevolution";
 
   return (
-    <div ref={ref} className="overflow-hidden py-8">
+    <div ref={ref} className="w-full overflow-hidden" style={{ maxHeight: "22vw" }}>
       <div
-        className="text-[12vw] md:text-[14vw] lg:text-[13vw] font-normal leading-[0.85] tracking-[-0.03em] text-white flex"
+        className="text-[18vw] md:text-[16vw] lg:text-[14.5vw] font-normal leading-[1] tracking-[-0.03em] text-white flex whitespace-nowrap"
         style={{ fontFamily: "var(--font-serif)" }}
       >
         {text.split("").map((letter, i) => {
-          // n+1 pattern: even index letters come from top, odd from bottom
           const isEven = i % 2 === 0;
 
           return (
@@ -51,8 +50,8 @@ function AnimatedFooterText() {
                     : { y: isEven ? "-110%" : "110%", opacity: 0 }
                 }
                 transition={{
-                  duration: 1,
-                  delay: i * 0.06,
+                  duration: 1.2,
+                  delay: i * 0.05,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -66,9 +65,20 @@ function AnimatedFooterText() {
   );
 }
 
-export default function Footer() {
+export default function Footer({
+  onVisibilityChange,
+}: {
+  onVisibilityChange?: (visible: boolean) => void;
+}) {
+  const footerRef = useRef<HTMLElement>(null);
+  const footerInView = useInView(footerRef, { margin: "-100px" });
+
+  useEffect(() => {
+    onVisibilityChange?.(footerInView);
+  }, [footerInView, onVisibilityChange]);
+
   return (
-    <footer className="relative bg-[#0a0a0a] text-white">
+    <footer ref={footerRef} className="relative bg-[#0a0a0a] text-white">
       {/* Top section with links */}
       <div className="px-6 md:px-12 lg:px-24 pt-24 pb-16">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
@@ -180,8 +190,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Large animated brand text */}
-      <div className="px-6 md:px-12 lg:px-24 pb-8 overflow-hidden">
+      {/* Large animated brand text — full width, bottom clipped */}
+      <div className="w-full overflow-hidden">
         <AnimatedFooterText />
       </div>
     </footer>

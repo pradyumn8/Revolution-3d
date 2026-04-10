@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Lenis from "lenis";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
@@ -11,6 +11,11 @@ import FooterCTA from "@/components/sections/footer-cta";
 import Footer from "@/components/sections/footer";
 
 export default function Home() {
+  const [footerVisible, setFooterVisible] = useState(false);
+  const handleFooterVisibility = useCallback((visible: boolean) => {
+    setFooterVisible(visible);
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.4,
@@ -37,13 +42,13 @@ export default function Home() {
 
   return (
     <main>
-      <Navbar />
+      <Navbar hidden={footerVisible} />
       <Hero />
       <FeaturedWork />
       <AboutSection />
       <ServicesSection />
       <FooterCTA />
-      <Footer />
+      <Footer onVisibilityChange={handleFooterVisibility} />
     </main>
   );
 }

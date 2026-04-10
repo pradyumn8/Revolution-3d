@@ -138,6 +138,7 @@ const TrailItemComponent = ({ item, onComplete }: TrailItemProps) => {
       ref={scope}
       key={item.id}
       className="absolute"
+      initial={{ scale: 0.5, opacity: 0 }}
       style={{
         left: item.x,
         top: item.y,

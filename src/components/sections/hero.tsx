@@ -25,11 +25,12 @@ export default function Hero() {
       <div className="absolute inset-0 z-20">
         <ImageTrail
           containerRef={containerRef}
-          interval={70}
-          rotationRange={20}
+          interval={100}
+          rotationRange={15}
           animationSequence={[
-            [{ scale: 1, opacity: 1 }, { duration: 0.4, ease: "circOut" }],
-            [{ scale: 0.9, opacity: 0 }, { duration: 0.8, ease: "circIn" }],
+            [{ scale: 1, opacity: 1, y: 0 }, { duration: 0.5, ease: "circOut" }],
+            [{ scale: 0.98, opacity: 1, y: -30 }, { duration: 1.5, ease: [0.4, 0, 0.2, 1] }],
+            [{ scale: 0.95, opacity: 0, y: -60 }, { duration: 1, ease: "easeOut" }],
           ]}
         >
           {projectImages.map((url, index) => (
