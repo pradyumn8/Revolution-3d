@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "WebFetch(domain:our-revolution.com)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

@@ -49,6 +49,7 @@ const menuItemVariants = {
 
 export default function Navbar({ hidden = false }: { hidden?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -59,7 +60,10 @@ export default function Navbar({ hidden = false }: { hidden?: boolean }) {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-6 mix-blend-difference"
       >
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+            setHoveredIndex(null);
+          }}
           className="text-white text-xs tracking-[0.2em] uppercase font-medium hover:opacity-60 transition-opacity"
           style={{ fontFamily: "var(--font-grotesk)" }}
         >
@@ -94,8 +98,13 @@ export default function Navbar({ hidden = false }: { hidden?: boolean }) {
             className="fixed inset-0 z-40 flex flex-col items-center justify-center"
             style={{ background: "var(--color-background)" }}
           >
-            {/* ( YOU ARE HERE ) markers */}
-            <div className="absolute top-28 left-1/2 -translate-x-1/2 flex items-center gap-[20vw] pointer-events-none">
+            {/* ( YOU ARE HERE ) markers — hidden when HOME is hovered
+                so the oversized flip-face doesn't clash with them */}
+            <div
+              className={`absolute top-28 left-1/2 -translate-x-1/2 flex items-center gap-[20vw] pointer-events-none transition-opacity duration-300 ${
+                hoveredIndex === 0 ? "opacity-0" : "opacity-100"
+              }`}
+            >
               <span
                 className="text-xs tracking-[0.2em] uppercase text-foreground/40"
                 style={{ fontFamily: "var(--font-grotesk)" }}
@@ -121,22 +130,45 @@ export default function Navbar({ hidden = false }: { hidden?: boolean }) {
                   animate="visible"
                   exit="exit"
                   onClick={() => setMenuOpen(false)}
-                  className="menu-link group text-[clamp(3rem,10vw,8rem)] leading-[0.95] font-normal text-foreground block overflow-hidden"
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() =>
+                    setHoveredIndex((prev) => (prev === i ? null : prev))
+                  }
+                  className="menu-link group relative block leading-[0.95] hover:z-10"
+                  style={{ perspective: "1200px" }}
                 >
-                  {/* Default: PP Migra (serif) — slides up on hover */}
-                  <span
-                    className="block transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:-translate-y-full"
-                    style={{ fontFamily: "var(--font-serif)" }}
+                  {/* 3D flip container — rotates on hover to reveal the
+                      back face, like a die tumbling forward. */}
+                  <div
+                    className="relative inline-block transition-transform duration-800 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:transform-[rotateX(180deg)]"
+                    style={{ transformStyle: "preserve-3d" }}
                   >
-                    {item.label}
-                  </span>
-                  {/* Hover: Sharp Grotesk — slides in from below */}
-                  <span
-                    className="absolute left-0 right-0 block translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:translate-y-0 font-black tracking-[-0.03em] uppercase text-white"
-                    style={{ fontFamily: "var(--font-grotesk)" }}
-                  >
-                    {item.label}
-                  </span>
+                    {/* Front face: serif label */}
+                    <span
+                      className="block text-[clamp(3rem,10vw,8rem)] text-foreground"
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
+                      }}
+                    >
+                      {item.label}
+                    </span>
+                    {/* Back face: heavy display black, larger, pre-flipped
+                        180deg so it faces away until the container flips */}
+                    <span
+                      className="absolute left-1/2 top-1/2 whitespace-nowrap text-[clamp(4.5rem,13vw,14rem)] uppercase tracking-[-0.03em] text-white"
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontWeight: 900,
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
+                        transform: "translate(-50%, -50%) rotateX(180deg)",
+                      }}
+                    >
+                      {item.label}
+                    </span>
+                  </div>
                 </motion.a>
               ))}
             </nav>
